@@ -10,3 +10,15 @@ Ruby on Rails入門シリーズ演習2【Blog機能を実装する】
 - Githubにソースコードを送信し、そのリポジトリのURLを提出すること
 - 1文字以上140文字以下しか投稿できないようにすること
 - 140文字より多い文字数、または内容が空で投稿した場合、確認画面でエラーメッセージを表示させること
+
+# docker
+## 利用方法
+```
+# 初回のみ
+ docker-compose build --no-cache
+ docker-compose run web bin/rake db:create 
+# マイグレーションやデータ投入を行う際に 
+ docker-compose run web bin/rake db:migrate db:seed
+# アプリケーション起動時毎回実施
+ docker-compose up
+```
