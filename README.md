@@ -16,9 +16,9 @@ Ruby on Rails入門シリーズ演習2【Blog機能を実装する】
 ```
 # 初回のみ
  docker-compose build --no-cache
- docker-compose run web bin/rake db:create 
+ docker-compose run web bin/rails db:create 
 # マイグレーションやデータ投入を行う際に 
- docker-compose run web bin/rake db:migrate db:seed
+ docker-compose run web bin/rails db:migrate db:seed
 # アプリケーション起動時毎回実施
  docker-compose up
 ```
