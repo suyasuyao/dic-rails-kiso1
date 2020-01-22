@@ -13,6 +13,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(title: params[:blog][:title],
                      content: params[:blog][:content])
     @blog.save
+    redirect_to blogs_path
   end
 
   def edit
