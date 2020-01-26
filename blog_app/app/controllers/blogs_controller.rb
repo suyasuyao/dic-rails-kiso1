@@ -1,10 +1,11 @@
 class BlogsController < ApplicationController
+  before_action :set_blog, only: [:show, :edit, :update, :destroy] # destroyアクションを追加
+
   def index
     @blogs = Blog.all
   end
 
   def show
-    set_blog
   end
 
   def new
@@ -23,11 +24,9 @@ class BlogsController < ApplicationController
   end
 
   def edit
-    set_blog
   end
 
   def update
-    set_blog
     if @blog.update(blog_params)
       redirect_to blogs_path, notice: "ブログを編集しました！"
     else
@@ -36,6 +35,8 @@ class BlogsController < ApplicationController
   end
 
   def destroy
+    @blog.destroy
+    redirect_to blogs_path, notice: "ブログを削除しました！"
   end
 
   private
