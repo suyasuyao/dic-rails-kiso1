@@ -1,0 +1,1 @@
+# dic-rails-kiso1
